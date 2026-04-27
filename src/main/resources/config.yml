@@ -1,0 +1,45 @@
+#Do not change this manually, this is to keep track of config changes.
+config-version: 7
+
+#If mysql is set to false, database defaults to a data.db file
+#Do not set mysql to true unless you have a mysql database set up
+database:
+  mysql: false
+  host: 'localhost'
+  port: 3306
+  database: 'database'
+  username: 'username'
+  password: 'password'
+
+#If this is set to true, it will convert current ender chests to be used by this plugin;
+#If set to false, when players log in their vanilla enderchest contents will not transfer over.
+#Whether this is set to true or false, does NOT affect the enderchest contents that is saved by default minecraft.
+convert-current-ender-chest: true
+
+#If this is set to 0, players will need a permission to be able to open an enderchest
+default-rows: 3
+
+default-locale: 'en_us'
+
+#This is used when the plugin hooks into placeholder api to provide placeholders
+#This allows you to modify the placeholder identifier.
+#Placeholders can be parsed as %<papi-identifier>_size%
+papi-identifier: 'variableenderchests'
+
+#You can use this to register the commands that can be used to access the enderchest.
+#The first command is the main command.
+#Any other command in the list will be considered as aliases.
+open-enderchest-commands:
+  - 'enderchest'
+  - 'echest'
+
+#Any worlds specified here will not have access to the Variable Ender Chest
+#Players will not be able to access it via command OR block.
+#Instead accessing blocks will open the default vanilla enderchest.
+disabled-worlds:
+  - 'some_world_here'
+  - 'some_world_here_nether'
+  - 'some_world_here_the_end'
+
+blacklisted-items:
+  - 'COMMAND_BLOCK'
